@@ -16,9 +16,9 @@ const HorizontalBar = ({data}) => {
         const xScale= scaleLinear()
         .domain([0,max(data,entry=>entry.value)])
         .range([0,250])
-        const xAxis = axisBottom(xScale);
+        const xAxis = axisBottom(xScale).tickSize(0);
 
-        const yAxis = axisLeft(yScale);
+        const yAxis = axisLeft(yScale).tickSize(0);
         svg.select(".y-axis").style("transform","translateX(0px)").call(yAxis);
 
         svg.selectAll(".bar").data(data).join("rect").attr("class","bar")

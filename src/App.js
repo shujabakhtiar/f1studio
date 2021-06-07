@@ -36,7 +36,7 @@ function App() {
            <div className="mttd">
              <div className="mttd-data flex" >
                <div className="mttd-pie"> 
-               <Pie outerRadius={40} innerRadius={30} piecolors={["#D2D7D8","#47987A"]} pieData={ [
+               <Pie outerRadius={40} innerRadius={30}  piecolors={["#D2D7D8","#47987A"]} pieData={ [
             {item:"A",count:75},
             {item:"B",count:25},
                    
@@ -72,7 +72,7 @@ function App() {
            {/* Health Status and Critical Issue */}
            <div className="container-spacebetween">
              <div className="health-block flex-column">
-               <h3>Heath Status</h3>
+               <h3>Health Status</h3>
                <div className="health-chart">
                <Pie outerRadius={64} innerRadius={54} piecolors={["#FFBD35","#00B59B","#FF4333"]} pieData={ [
             {item:"A",count:75},
@@ -106,7 +106,7 @@ function App() {
         { name: 'Nov', value: 60 },
         { name: 'Dec', value: 80 },
         
-      ] } Pwidth={700} height={80} color={50} dotColor={88}/>
+      ] } Pwidth={700} height={80} color={50} dotColor="#92D4DC"/>
 </div>
             
                <hr className="hr"/>
@@ -170,7 +170,7 @@ function App() {
             
         ]} text="" text2="" textlight=""/></div>
                          <div className="id-piechart">
-     <BarChart width={300} height={120} data={[10,33,20]} xdata={[{name:"Total"},{name:"up"},{name:"down"}]}/>
+     <BarChart width={80} height={120} data={[10,33,20]} xdata={[{name:"Total",value:20},{name:"up",value:29},{name:"down",value:45}]}/>
 
 </div>
             </div>
@@ -191,8 +191,9 @@ function App() {
            <div className="container-spacebetween">
             <div className="current-expenses flex-column">
             <h3>Current Expenses</h3>
-               <div>         
-                 
+               <div className="flex ai-center" style={{height:"193px"}}>         
+               
+
 
 </div>
 <div className="h-indicators">
@@ -220,7 +221,7 @@ function App() {
         { name: 'Nov', value: 60 },
         { name: 'Dec', value: 80 },
         
-      ] } Pwidth={600} height={80} color={50} dotColor={88}/>
+      ] } Pwidth={600} height={80} color={50} dotColor="#7972CD"/>
 </div>
 <div className="h-indicators">
                <div className="flex ai-center" style={{marginRight:"17px",marginLeft:"20px"}} ><div className="circle" style={{backgroundColor:"#92D4DC"}}></div>Budget</div>
@@ -283,7 +284,7 @@ function App() {
            {/* Vulnerability */}
            <div className="container-spacebetween">
              <div className="vulnerability-block flex-column" style={{marginRight:"30px"}}>
-             <h3>Network Vulnerability ( This week )</h3>
+             <h3>Network Vulnerability <span style={{fontSize:"14px", color:"#2C2D2D"}}>( This week )</span></h3>
                <div className="id-charts">  
                <div className="id-piechart">
                <Pie outerRadius={60} innerRadius={45} piecolors={["#FF4333","#6490DE","#FFBD35"]} pieData={ [
@@ -306,7 +307,7 @@ function App() {
         { name: 'Sa', value: 0 },
       
         
-      ] } Pwidth={300} height={70} color={50} dotColor={88}/></div>
+      ] } Pwidth={300} height={70} color={50} dotColor="#608CE4"/></div>
 
 </div>
 
@@ -326,7 +327,7 @@ function App() {
 
 
  <div className="vulnerability-block flex-column" >
-             <h3>Network Vulnerability ( This week )</h3>
+             <h3>Code Vulnerability <span style={{fontSize:"14px", color:"#2C2D2D"}}>( This week )</span></h3>
                <div className="id-charts">  
                <div className="id-piechart">
                <Pie outerRadius={60} innerRadius={45} piecolors={["#FF4333","#6490DE","#FFBD35"]} pieData={ [
@@ -342,14 +343,14 @@ function App() {
                        <LineChart data2={[
         { name: 'S', value: 30 },
         { name: 'M', value: 10 },
-        { name: 'T', value: 50 },
+        { name: 'T', value: 70 },
         { name: 'W', value: 20 },
-        { name: 'Th', value: 80 },
+        { name: 'Th', value: 40 },
         { name: 'F', value: 30 },
         { name: 'Sa', value: 0 },
       
         
-      ] } Pwidth={300} height={70} color={50} dotColor={88}/></div>
+      ] } Pwidth={300} height={70} color={50} dotColor="#608CE4"/></div>
 
 </div>
 
@@ -364,12 +365,94 @@ function App() {
                <p className="blue-info">The infrastructure that was down has increased by 10% since yesterday.</p>
 
 
-             </div>           </div> 
+             </div>    
+            
+                   </div> 
            
            <div className="container-spacebetween">
-             <div className="vulnerability-block" style={{marginRight:"30px"}}></div>
-             <div className="vulnerability-block"></div>
-           </div>
+           <div className="vulnerability-block flex-column" style={{marginRight:"30px"}}>
+             <h3>Web App Vulnerability <span style={{fontSize:"14px", color:"#2C2D2D"}}>( This week )</span></h3>
+               <div className="id-charts">  
+               <div className="id-piechart">
+               <Pie outerRadius={60} innerRadius={45} piecolors={["#FF4333","#6490DE","#FFBD35"]} pieData={ [
+            {item:"A",count:75},
+            {item:"B",count:25},
+            {item:"C",count:35},
+            
+        ]} text="" text2="" textlight=""/>     
+                 
+                 </div>        
+                 <div className="id-piechart">
+
+                       <LineChart data2={[
+        { name: 'S', value: 90 },
+        { name: 'M', value: 50 },
+        { name: 'T', value: 20 },
+        { name: 'W', value: 20 },
+        { name: 'Th', value: 80 },
+        { name: 'F', value: 30 },
+        { name: 'Sa', value: 10 },
+      
+        
+      ] } Pwidth={300} height={70} color={50} dotColor="#608CE4"/></div>
+
+</div>
+
+<div className="h-indicators">
+               <div className="flex ai-center" style={{marginRight:"7px",marginLeft:"20px"}} ><div className="circle" style={{backgroundColor:"#92D4DC"}}></div>Critical</div>
+               <div className="flex ai-center" style={{marginRight:"7px"}} ><div className="circle" style={{backgroundColor:"#00A9E0"}}></div>High</div>
+               <div className="flex ai-center" style={{marginRight:"7px"}} ><div className="circle" style={{backgroundColor:"#00A9E0"}}></div>Medium</div>
+               </div>
+
+
+               <hr className="hr"/>
+               <p className="blue-info">The infrastructure that was down has increased by 10% since yesterday.</p>
+
+
+             </div>            
+             
+             
+             
+             <div className="vulnerability-block flex-column">
+             <h3>OSS Vulnerability <span style={{fontSize:"14px", color:"#2C2D2D"}}>( This week )</span></h3>
+               <div className="id-charts">  
+               <div className="id-piechart">
+               <Pie outerRadius={60} innerRadius={45} piecolors={["#FF4333","#6490DE","#FFBD35"]} pieData={ [
+            {item:"A",count:75},
+            {item:"B",count:25},
+            {item:"C",count:35},
+            
+        ]} text="" text2="" textlight=""/>     
+                 
+                 </div>        
+                 <div className="id-piechart">
+
+                       <LineChart data2={[
+        { name: 'S', value: 30 },
+        { name: 'M', value: 10 },
+        { name: 'T', value: 30 },
+        { name: 'W', value: 21 },
+        { name: 'Th', value: 50 },
+        { name: 'F', value: 30 },
+        { name: 'Sa', value: 80 },
+      
+        
+      ] } Pwidth={300} height={70} color={50} dotColor="#608CE4"/></div>
+
+</div>
+
+<div className="h-indicators">
+               <div className="flex ai-center" style={{marginRight:"7px",marginLeft:"20px"}} ><div className="circle" style={{backgroundColor:"#92D4DC"}}></div>Critical</div>
+               <div className="flex ai-center" style={{marginRight:"7px"}} ><div className="circle" style={{backgroundColor:"#00A9E0"}}></div>High</div>
+               <div className="flex ai-center" style={{marginRight:"7px"}} ><div className="circle" style={{backgroundColor:"#00A9E0"}}></div>Medium</div>
+               </div>
+
+
+               <hr className="hr"/>
+               <p className="blue-info">The infrastructure that was down has increased by 10% since yesterday.</p>
+
+
+             </div>           </div>
 
       </div>
     </div>

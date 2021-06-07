@@ -1,9 +1,9 @@
 import React,{useRef,useEffect,useState} from 'react'
-import {select,line, scaleLinear, axisBottom,axisLeft,scaleBand}from "d3"
+import {select,line, scaleLinear, axisBottom,axisLeft,scaleBand,xaxisge}from "d3"
 import { extent } from 'd3-array';
 
 
-const LineChart = ({data2,Pwidth}) => {
+const LineChart = ({data2,Pwidth,dotColor}) => {
     const [data,setData]=useState([25,30,45,60,30,30,20,44,32 ]);
 
     const svgRef=useRef();
@@ -33,8 +33,8 @@ const yScale = scaleLinear().domain(extent(data2, d => d.value)).range([167,0])
 
 
 
-const xAxis = axisBottom(xScale);
-const yAxis = axisLeft(yScale);
+const xAxis = axisBottom(xScale).tickSize(0);
+const yAxis = axisLeft(yScale).tickSize(0);
 svg.select(".x-axis").style("transform","translateY(167px)")
 .call(xAxis);
 
@@ -55,14 +55,14 @@ attr("class","line")
 .attr("stroke","#646464")
 
 svgContent.selectAll(".myDot")
-.data([data2])
+.data(data2)
 .join("circle")
 .attr("class","myDot")
 .attr("stroke","black")
 .attr("r",4)
-.attr("fill","orange")
-.attr("cx",(value,index)=>xScale(value.name))
-.attr("cy",(value=>yScale(value.value)))
+.attr("fill",dotColor)
+.attr("cx",(entry,index)=>xScale(entry.name))
+.attr("cy",(entry,index)=>yScale(entry.value))
 }
 
 
@@ -87,6 +87,7 @@ svgContent.selectAll(".myDot")
 
           </g>
           <g className="y-axis"/>
+          <g className="content"/>
 
          </svg>
         </>

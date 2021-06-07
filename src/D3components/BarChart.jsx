@@ -6,13 +6,10 @@ import {select,line, scaleLinear,max, axisBottom,axisLeft,scaleBand}from "d3"
 
 function BarChart({ width, height, data,xdata }){
     const ref = useRef();
-    const [data2,setData2]=useState([
-        {name:"Total",value:23},{name:"up",value:98},{name:"down"}
-      ]);
+    const [data2,setData2]=useState(xdata);
     useEffect(() => {
         const svg = d3.select(ref.current)
-            .attr("width", 150)
-            .attr("height", height)
+            
     }, []);
 
     useEffect(() => {
@@ -27,17 +24,19 @@ function BarChart({ width, height, data,xdata }){
 
      
 const xScale = scaleBand()
-.domain(data2.map(d => d.name)).rangeRound([0,70]).padding(0);
+.domain(data2.map(d => d.name)).rangeRound([0,width]).padding(0);
 
-const xAxis = axisBottom(xScale);
-const yAxis = axisLeft(yScale);
 
 
 var yScale = d3.scaleLinear()
 .domain([0, max(data,entry=>entry)])
 .range([0, height]);
 
+const xAxis = axisBottom(xScale).tickSize(0);
+const yAxis = axisLeft(yScale).tickSize(0);
+
 svg.select(".x-axis").style("transform","translateY(120px)").call(xAxis);
+svg.select(".y-axis").style("transform","translateY(0px)").call(yAxis);
 
       
         
