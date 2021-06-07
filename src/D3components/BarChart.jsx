@@ -4,7 +4,7 @@ import React,{useRef,useEffect,useState} from 'react'
 import {select,line, scaleLinear,max, axisBottom,axisLeft,scaleBand}from "d3"
 
 
-function BarChart({ width, height, data,xdata }){
+function BarChart({ width, height, data,xdata,space }){
     const ref = useRef();
     const [data2,setData2]=useState(xdata);
     useEffect(() => {
@@ -48,7 +48,7 @@ svg.select(".y-axis").style("transform","translateY(0px)").call(yAxis);
         selection
             .enter()
             .append("rect")
-            .attr("x", (d, i) =>i*30)
+            .attr("x", (d, i) =>i*space)
             .attr("y", (d) => height)
             .attr("width", 10)
             .attr("height", 0)

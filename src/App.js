@@ -170,7 +170,7 @@ function App() {
             
         ]} text="" text2="" textlight=""/></div>
                          <div className="id-piechart">
-     <BarChart width={80} height={120} data={[10,33,20]} xdata={[{name:"Total",value:20},{name:"up",value:29},{name:"down",value:45}]}/>
+     <BarChart width={80} height={120} space={30}  data={[10,33,20]} xdata={[{name:"Total",value:20},{name:"up",value:29},{name:"down",value:45}]}/>
 
 </div>
             </div>
@@ -193,6 +193,7 @@ function App() {
             <h3>Current Expenses</h3>
                <div className="flex ai-center" style={{height:"193px"}}>         
                
+               <BarChart width={200} space={55} height={120} data={[10,43,50,90]} xdata={[{name:"OnPrem",value:20},{name:"AWS",value:29},{name:"AZURE",value:45},{name:"ORACLE",value:45}]}/>
 
 
 </div>
