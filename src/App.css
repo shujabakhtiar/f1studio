@@ -1,12 +1,63 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.main-container {
+  width: 90vw;
+  margin-top: 70px;
+  max-width: 1224px;
+  background-color: white;
 
+  border-radius: 25px 25px 0px 0px;
+}
+.mttd {
+  background-color: #d6e8ea;
+  height: 168px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.container-spacebetween {
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+.vline {
+  height: 80%;
+  width: 2px;
+  background-color: #c9c9c9;
+}
+.mttd-data {
+  height: 80%;
+  width: 30%;
+}
+.inner-container {
+  padding: 50px;
+}
+.timestamp {
+  text-align: right;
+  margin-block-start: 0em;
+  font-size: 12px;
+  color: #646464;
+}
+h3 {
+  margin-block-start: 0em;
+  margin-left: 30px;
+  font-weight: 600;
+
+  margin-block-end: 20px;
+}
+body {
+  background-color: #c2e2e7;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,11 +74,187 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.circle {
+  border-radius: 50%;
+  width: 12px;
+  margin: 5px;
+  height: 12px;
+  background-color: #006bd4;
+}
+.hr {
+  border-top: 1px solid #979797;
+  width: 95%;
+}
+.blue-info {
+  text-align: left;
+  letter-spacing: 0px;
+  color: #006bd4;
+  font-size: 14px;
+  font-weight: 600;
+  margin-block-start: 0em;
+  margin-block-end: 20px;
+  margin-left: 22px;
+}
+.h-indicators {
+  display: flex;
+  justify-content: flex-start;
+  color: #474747;
+  font-size: 14px;
+}
+.h-indicators > div {
+  margin-right: 10px;
+}
+.health-block {
+  height: 317px;
+  width: 30%;
+  max-width: 293px;
+  border: 1px solid #979797;
+  margin-right: 30px !important;
+  border-radius: 3px;
+}
+.OS-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+.flex-column {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.ai-center {
+  align-items: center;
+  color: #474747;
+  font-size: 14px;
+}
+.critical-block {
+  width: 70%;
+  border-radius: 3px;
 
+  height: 317px;
+  border: 1px solid #979797;
+}
 .App-link {
   color: #61dafb;
 }
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.posi-fixed {
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.bold {
+  text-align: left;
+  letter-spacing: 0.57px;
+  color: #000000;
+  margin-block-end: 0em;
+  font-size: 20px;
+  margin-block-start: 0px;
+}
+.chartArea {
+  position: relative;
+}
+.id-piechart {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.id-charts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.health-chart {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 
+  align-items: center;
+}
+.mttd-pie {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.ci-Line {
+  display: flex;
+  width: 100%;
+  height: 180px;
+}
+.ci-Line > svg {
+  margin-left: 63px;
+}
+.mttd-grey {
+  max-width: 144px;
+  height: 38px;
+  text-align: left;
+  letter-spacing: 0.45px;
+  color: #646464;
+  margin-block-end: 0em;
+  margin-block-start: 0px;
+}
+.mttd-mid {
+  display: flex;
+  align-items: flex-end;
+  color: #646464;
+}
+
+h2 {
+  font-size: 20px;
+}
+.ID-block {
+  height: 395px;
+  width: 50%;
+  max-width: 538px;
+  border-radius: 3px;
+
+  border: 1px solid #979797;
+}
+svg {
+  overflow: visible;
+}
+.current-expenses {
+  width: 35%;
+  border: 1px solid #979797;
+  height: 395px;
+  border-radius: 3px;
+}
+.cost-trend {
+  width: 60%;
+  border: 1px solid #979797;
+  height: 395px;
+  border-radius: 3px;
+}
+.OS {
+  border: 1px solid #979797;
+  height: 168px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+.vulnerability-block {
+  height: 317px;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  width: 50%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
