@@ -16,6 +16,9 @@
 
   border-radius: 25px 25px 0px 0px;
 }
+.tick {
+  stroke: none;
+}
 .mttd {
   background-color: #d6e8ea;
   height: 168px;

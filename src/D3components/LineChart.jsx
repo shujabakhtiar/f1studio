@@ -52,7 +52,7 @@ join("path").
 attr("class","line")
 .attr("d",myLine)
 .attr("fill","none")
-.attr("stroke","blue")
+.attr("stroke","#646464")
 
 svgContent.selectAll(".myDot")
 .data([data2])
@@ -62,7 +62,7 @@ svgContent.selectAll(".myDot")
 .attr("r",4)
 .attr("fill","orange")
 .attr("cx",(value,index)=>xScale(value.name))
-.attr("cy",yScale)
+.attr("cy",(value=>yScale(value.value)))
 }
 
 
@@ -71,7 +71,7 @@ svgContent.selectAll(".myDot")
         <>
           <svg ref={svgRef}> 
           <g className="x-axis">
-            <g className="content"/>
+    
           {/*data.map((d, i) => {
     return <circle
       key={i}

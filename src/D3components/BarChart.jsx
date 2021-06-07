@@ -11,9 +11,8 @@ function BarChart({ width, height, data,xdata }){
       ]);
     useEffect(() => {
         const svg = d3.select(ref.current)
-            .attr("width", 200)
+            .attr("width", 150)
             .attr("height", height)
-            .style("border", "1px solid black")
     }, []);
 
     useEffect(() => {
@@ -32,11 +31,15 @@ const xScale = scaleBand()
 
 const xAxis = axisBottom(xScale);
 const yAxis = axisLeft(yScale);
-svg.select(".x-axis").style("transform","translateY(200px)").call(xAxis);
 
-        var yScale = d3.scaleLinear()
-                            .domain([0, max(data,entry=>entry.value)])
-                            .range([0, height-100]);
+
+var yScale = d3.scaleLinear()
+.domain([0, max(data,entry=>entry)])
+.range([0, height]);
+
+svg.select(".x-axis").style("transform","translateY(120px)").call(xAxis);
+
+      
         
         selection
             .transition().duration(300)
@@ -69,6 +72,7 @@ svg.select(".x-axis").style("transform","translateY(200px)").call(xAxis);
         <div className="chart">
             <svg ref={ref}>
             <g className="x-axis"/>
+            <g className="y-axis"/>
             </svg>
         </div>
         

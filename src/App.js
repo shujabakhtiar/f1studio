@@ -161,7 +161,7 @@ function App() {
             <div className="ID-block flex-column">
             <h3>Service Status</h3>
 
-            <div className="id-charts">
+            <div className="id-charts" style={{height:"160px"}}>
             <div className="id-piechart">
             <Pie outerRadius={80} innerRadius={68} piecolors={["#005D9D","#16B49B","#8ED4DE"]} pieData={ [
             {item:"A",count:75},
@@ -170,7 +170,7 @@ function App() {
             
         ]} text="" text2="" textlight=""/></div>
                          <div className="id-piechart">
-     <BarChart width={300} height={200} data={[10,33,20]} xdata={[{name:"Total"},{name:"up"},{name:"down"}]}/>
+     <BarChart width={300} height={120} data={[10,33,20]} xdata={[{name:"Total"},{name:"up"},{name:"down"}]}/>
 
 </div>
             </div>
