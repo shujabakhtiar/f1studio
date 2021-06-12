@@ -5,6 +5,9 @@ import './App.css';
 import LineChart from "./D3components/LineChart"
 import BarChart from "./D3components/BarChart"
 import HorizontalBar from './D3components/HorizontalBar';
+import GroupedBarChart from './D3components/GroupedBarChart';
+import MultiSeriesConnectedScatterPlot from './D3components/MultiSeriesConnectedScatterPlot';
+
 const datas = [
   [10, 30, 40, 200,10],
  
@@ -193,7 +196,7 @@ function App() {
             <h3>Current Expenses</h3>
                <div className="flex ai-center" style={{height:"193px"}}>         
                
-               <BarChart width={200} space={55} height={120} data={[10,43,50,90]} xdata={[{name:"OnPrem",value:20},{name:"AWS",value:29},{name:"AZURE",value:45},{name:"ORACLE",value:45}]}/>
+               <GroupedBarChart width={300} space={55} height={200} margin={{ t: 30, l: 30, b: 30, r: 30 }} />
 
 
 </div>
@@ -206,23 +209,9 @@ function App() {
               </div> 
               <div className="cost-trend flex-column">
               <h3>Cost Trend</h3>
-               <div className="ci-Line">            
+               <div className="ci-Line outer">            
+               <MultiSeriesConnectedScatterPlot width={600} space={55} height={190} margin={{ t: 30, l: 30, b: 30, r: 30 }} />
 
-               <LineChart data2={[
-        { name: 'Jan', value: 30 },
-        { name: 'Feb', value: 10 },
-        { name: 'Mar', value: 50 },
-        { name: 'Apr', value: 20 },
-        { name: 'May', value: 80 },
-        { name: 'Jun', value: 30 },
-        { name: 'July', value: 0 },
-        { name: 'Aug', value: 20 },
-        { name: 'Sep', value: 100 },
-        { name: 'Oct', value: 55 },
-        { name: 'Nov', value: 60 },
-        { name: 'Dec', value: 80 },
-        
-      ] } Pwidth={600} height={80} color={50} dotColor="#7972CD"/>
 </div>
 <div className="h-indicators">
                <div className="flex ai-center" style={{marginRight:"17px",marginLeft:"20px"}} ><div className="circle" style={{backgroundColor:"#92D4DC"}}></div>Budget</div>

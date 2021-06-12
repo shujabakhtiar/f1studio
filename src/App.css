@@ -258,6 +258,10 @@ svg {
   border-radius: 3px;
   width: 50%;
 }
+.outer {
+  margin-left: 2rem;
+  position: relative;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
