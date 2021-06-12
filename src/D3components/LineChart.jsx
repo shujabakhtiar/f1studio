@@ -58,11 +58,13 @@ svgContent.selectAll(".myDot")
 .data(data2)
 .join("circle")
 .attr("class","myDot")
-.attr("stroke","black")
+.style("z-index", "19")
 .attr("r",4)
 .attr("fill",dotColor)
 .attr("cx",(entry,index)=>xScale(entry.name))
 .attr("cy",(entry,index)=>yScale(entry.value))
+.style("background", "#ccc");
+
 }
 
 
